@@ -8,20 +8,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Data Summarization</title>
         <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-        <link href="/static/css/jquery-ui.min.css" rel="stylesheet">          
+        <link href="/static/css/jquery-ui.min.css" rel="stylesheet">  
     </head>
 
     <body style="background-color: #1f253c;" >
 
-        <header style="background-color:  #1f253c;"
-        class="fixed inset-0 w-full flex flex-col justify-center justify-items-center content-center h-20 rounded-b-lg">
+        <header style="background-color: #1f253c;"
+        class="fixed inset-0 w-full flex flex-col justify-center justify-items-center content-center h-20 rounded-none">
         <div class="self-center font-bold text-white text-2xl">Text Summarizer</div>
         </header>
 
         <section class="flex flex-wrap mt-20 w-full">
         <div class="w-full md:w-1/2">
             <form class="w-full flex flex-col md:h-screen" action="{{url_for('Summarize')}}" method="post">
-                <textarea class="w-11/12 md:h-3/4 m-2 p-2 border-black rounded-lg border self-center justify-center"
+                <textarea style="background-color:  #fbd5d5;"  class="w-9/12 md:h-3/5 m-2 p-2 border-black rounded-lg border self-center justify-center"
                     name="data" id="data" cols="30" rows="10" placeholder="Enter your Text"
                     required="required"></textarea>
                 <div class="flex self-center">
@@ -29,21 +29,18 @@
                     <input type="range" class="m-2" min="20" max="1000" name="maxL">
                 </div>
                 <div class="flex self-center">
-                    <button style="background-color: #f0b8d3;" class="m-1 hover:bg-blue-700 text-white font-semi-bold py-2 px-4 rounded-lg"
+                    <button class="m-1 bg-white hover:bg-blue-700 text-black font-semi-bold py-2 px-4 rounded-lg"
                         type="submit" onclick="Check()">Submit</button>
-                    <button style="background-color: #f0b8d3;" class="m-1 hover:bg-blue-700 text-white font-semi-bold py-2 px-4 rounded-lg"
+                    <button class="m-1 bg-white hover:bg-slate-950 text-black font-semi-bold py-2 px-4 rounded-lg"
                         type="reset">Clear</button>
                 </div>   </div>
             </form>
         </div>
         <div class="w-full md:w-1/2">
             <div class="mt-2 flex flex-col w-full md:h-screen">
-                <div class="container col-sm-6">
-                <textarea style="background-color: #ffffff;"
-                    class="w-11/12 border-green-600 rounded-lg p-2 border self-center justify-center md:h-3/4" rows="10"
-                    cols="30" name="result" readonly placeholder="Your Summary">{{result}}</textarea>
-                    <button style="background-color: #f0b8d3;"
-                    class="m-2 hover:bg-blue-700 text-white font-semi-bold py-2 px-4 rounded-lg self-center" onclick="myFunction()">Copy text</button>
+                <textarea style="background-color:  #fbd5d5;" 
+                class="w-9/12 md:h-2/5 border-green-600 rounded-lg p-2 border self-center justify-center md:h-3/4" rows="10" cols="30" name="result" readonly placeholder="Your Summary">{{result}}</textarea>
+                    <button class="m-2 bg-white hover:bg-blue-700 text-black font-semi-bold py-2 px-4 rounded-lg self-center" onclick="myFunction()">Copy text</button>
             </div>
         </div>
     </div>
